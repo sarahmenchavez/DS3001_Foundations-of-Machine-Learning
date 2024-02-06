@@ -1,0 +1,104 @@
+---
+title: How Data Science is Solving the Mystery of Crime Prediction?
+author: Sarah Menchavez
+date: 9/14/2023
+format: 
+  html:
+    mainfont: Times New Roman
+    toc: true
+    toc-title: Index
+    toc-depth: 2
+    smooth-scroll: true
+    toc-location: left
+    theme: slate
+editor: visual
+juypter: python3
+
+execute:
+  echo: false 
+---
+
+# Introduction
+Data science has the capacity to transform traditional law enforcement approaches to addressing criminal activities. From pinpointing areas with high criminal activity to optimizing resource allocation, powerful algorithms and machine learning techniques can make predictions about where crimes might happen in the future. 
+[How Data Science is Solving the Mystery of Crime Prediction?](https://www.shiksha.com/online-courses/articles/crime-prediction-using-data-science/)
+ 
+
+::: {.panel-tabset}
+## Real-life Application of Data Science in Crime Prediction
+Spatial analysis helps predict crime hotspots for law enforcement to allocate resources effectively.
+ex. Identifying regions characterized by high incidents of theft, assault, or property crime. 
+
+Time series analysis helps to forecast crime trends allowing for proactive crime prevention strategies.
+ex. Leveraging past crime records to anticipate the time and location of potential future criminal incidents.
+
+Machine learning helps predict offender characteristics to improves investigations and the identification of suspects by law enforcement.
+ex. Examining crime data and the characteristics of offenders to predict the probability of future criminal activities considering demographic details and past criminal records.
+
+## Data Science steps involved in Crime Prediction
+Patterns, trends and correlations are used to make accurate predictions about future criminal activities.
+
+The following are the steps involved in the process:
+Data Collection, Data Cleaning and Preprocessing, Data Analysis, Making Prediction
+
+
+
+## Advantages of using Data Science for Crime Prediction
+
+Enhances accuracy of crime predictions
+
+Ensures law enforcement resources are allocated effectively 
+
+Identifies patterns and relationships in crime data
+
+Manages informed decisions for crime prevention
+
+Can be used to proactively prevent crimes 
+
+Supports evidence-based policing strategies
+
+## Limitations of using Data Science for Crime Prediction
+
+Data Privacy concerns 
+
+Bias in data collection and analysis manifesting in algorithms 
+
+Inacurate predictions of human behavior and risk of making incorrect predictions
+
+Incorrect predictions resulting in misallocating resources 
+
+Ethical concerns in the use of technology in the criminal justice system
+
+:::
+
+
+# Crime Scene
+
+```{python}
+from IPython.display import Image
+Image(filename='crime_scene.jpg', width=600, height=600)
+```
+
+```{python setup, include=FALSE}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+import plotly.graph_objects as go
+import plotly as py
+from pydataset import data 
+```
+
+
+# Bar Plot of USArrests
+```{python echo=FALSE, message=FALSE, warning=FALSE}
+#create a dataframe from the pydataset data
+df = data("USArrests")
+#use plotly express to create a bar chart
+fig = px.bar(df, x="Murder", y="Assault", barmode="group", title="Rates of Murder and Assault by US State")
+#show the plot
+fig.show()
+```
+
+
+
